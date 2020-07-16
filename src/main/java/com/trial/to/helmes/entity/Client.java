@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.math.BigInteger;
 
 @Entity
-@Table(name = "clients")
-public class Clients {
+@Table(name = "client")
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class Clients {
     private Integer sectorId;
     private boolean terms;
 
-    public Clients(BigInteger id, String name, String sessionId, Integer sectorId, boolean terms) {
+    public Client(BigInteger id, String name, String sessionId, Integer sectorId, boolean terms) {
         this.id = id;
         this.name = name;
         this.sessionId = sessionId;
@@ -23,14 +23,14 @@ public class Clients {
         this.terms = terms;
     }
 
-    public Clients() {
+    public Client() {
     }
 
     public BigInteger getId() {
         return id;
     }
 
-    public Clients setId(BigInteger id) {
+    public Client setId(BigInteger id) {
         this.id = id;
         return this;
     }
@@ -39,7 +39,7 @@ public class Clients {
         return name;
     }
 
-    public Clients setName(String name) {
+    public Client setName(String name) {
         this.name = name;
         return this;
     }
@@ -48,7 +48,7 @@ public class Clients {
         return sessionId;
     }
 
-    public Clients setSessionId(String sessionId) {
+    public Client setSessionId(String sessionId) {
         this.sessionId = sessionId;
         return this;
     }
@@ -57,7 +57,7 @@ public class Clients {
         return sectorId;
     }
 
-    public Clients setSectorId(Integer sectorId) {
+    public Client setSectorId(Integer sectorId) {
         this.sectorId = sectorId;
         return this;
     }

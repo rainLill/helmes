@@ -1,6 +1,6 @@
 package com.trial.to.helmes.api;
 
-import com.trial.to.helmes.entity.Sectors;
+import com.trial.to.helmes.entity.Sector;
 import com.trial.to.helmes.service.SectorService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ public class SectorsController {
     }
 
     @GetMapping()
-    public List<Sectors> getAllSectors() {
+    public List<Sector> getAllSectors() {
         return sectorService.getAllSectors();
     }
 }

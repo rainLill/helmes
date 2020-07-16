@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.math.BigInteger;
 
 @Entity
-@Table(name = "sectors")
-public class Sectors {
+@Table(name = "sector")
+public class Sector {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class Sectors {
         return id;
     }
 
-    public Sectors setId(int id) {
+    public Sector setId(int id) {
         this.id = id;
         return this;
     }
@@ -26,7 +26,7 @@ public class Sectors {
         return sector;
     }
 
-    public Sectors setSector(String sector) {
+    public Sector setSector(String sector) {
         this.sector = sector;
         return this;
     }
@@ -35,7 +35,7 @@ public class Sectors {
         return parentId;
     }
 
-    public Sectors setParentId(BigInteger parentId) {
+    public Sector setParentId(BigInteger parentId) {
         this.parentId = parentId;
         return this;
     }

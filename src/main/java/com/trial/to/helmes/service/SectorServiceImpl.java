@@ -1,6 +1,6 @@
 package com.trial.to.helmes.service;
 
-import com.trial.to.helmes.entity.Sectors;
+import com.trial.to.helmes.entity.Sector;
 import com.trial.to.helmes.repository.SectorRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ public class SectorServiceImpl implements SectorService {
     }
 
     @Override
-    public List<Sectors> getAllSectors() {
+    public List<Sector> getAllSectors() {
         return sectorRepository.findAll();
     }
 }

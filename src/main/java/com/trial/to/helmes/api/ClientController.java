@@ -1,8 +1,7 @@
 package com.trial.to.helmes.api;
 
-import com.trial.to.helmes.entity.Clients;
+import com.trial.to.helmes.entity.Client;
 import com.trial.to.helmes.service.ClientService;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.RequestContextHolder;
 
@@ -23,7 +22,7 @@ public class ClientController {
     }
 
     @GetMapping()
-    public List<Clients> getClientData() {
+    public List<Client> getClientData() {
         String sessionId = RequestContextHolder.currentRequestAttributes().getSessionId();
         return clientService.getClientData(sessionId);
     }
