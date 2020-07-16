@@ -1,0 +1,22 @@
+POST http://localhost:8080/user?firstName=Mihkel
+content-Type: application/json
+
+{
+  "sectorList": [
+    {
+      "sector": "Esimene"
+    },
+    {
+      "sector": "teine"
+    },
+    {
+      "sector": "kolmas"
+    },
+    {
+      "sector": "neljas"
+    },
+    {
+      "sector": "neljas"
+    }
+  ]
+}
