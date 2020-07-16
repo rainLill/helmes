@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("client")
-@Validated
 public class ClientController {
 
     ClientService clientService;
