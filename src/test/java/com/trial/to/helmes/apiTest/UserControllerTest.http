@@ -1,22 +1,21 @@
-POST http://localhost:8080/user?firstName=Mihkel
+POST http://localhost:8080/client/?firstName=Mihkel&terms=true
+content-Type: application/json
+
+
+  [1,2,3]
+
+###
+
+POST http://localhost:8080/client/
 content-Type: application/json
 
 {
-  "sectorList": [
-    {
-      "sector": "Esimene"
-    },
-    {
-      "sector": "teine"
-    },
-    {
-      "sector": "kolmas"
-    },
-    {
-      "sector": "neljas"
-    },
-    {
-      "sector": "neljas"
-    }
-  ]
+  "firstName": "Jaan",
+  "activeSectors": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "terms": true
 }

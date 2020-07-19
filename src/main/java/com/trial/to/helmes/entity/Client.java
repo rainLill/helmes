@@ -11,19 +11,16 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id;
     private String name;
-    private String sessionId;
-    private Integer sectorId;
     private boolean terms;
 
-    public Client(BigInteger id, String name, String sessionId, Integer sectorId, boolean terms) {
-        this.id = id;
-        this.name = name;
-        this.sessionId = sessionId;
-        this.sectorId = sectorId;
-        this.terms = terms;
-    }
 
     public Client() {
+    }
+
+    public Client(BigInteger id, String name, boolean terms) {
+        this.id = id;
+        this.name = name;
+        this.terms = terms;
     }
 
     public BigInteger getId() {
@@ -44,21 +41,12 @@ public class Client {
         return this;
     }
 
-    public String getSessionId() {
-        return sessionId;
+    public boolean isTerms() {
+        return terms;
     }
 
-    public Client setSessionId(String sessionId) {
-        this.sessionId = sessionId;
-        return this;
-    }
-
-    public Integer getSectorId() {
-        return sectorId;
-    }
-
-    public Client setSectorId(Integer sectorId) {
-        this.sectorId = sectorId;
+    public Client setTerms(boolean terms) {
+        this.terms = terms;
         return this;
     }
 }

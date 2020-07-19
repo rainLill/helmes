@@ -9,15 +9,15 @@ public class Sector {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private BigInteger id;
     private String sector;
     private BigInteger parentId;
 
-    public int getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public Sector setId(int id) {
+    public Sector setId(BigInteger id) {
         this.id = id;
         return this;
     }

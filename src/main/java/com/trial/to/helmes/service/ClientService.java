@@ -1,14 +1,13 @@
 package com.trial.to.helmes.service;
 
-import com.trial.to.helmes.entity.Client;
-
-import java.util.List;
+import com.trial.to.helmes.model.ClientData;
+import com.trial.to.helmes.model.ClientInputData;
 
 public interface ClientService {
 
-    void createClient(List<Integer> sectors, String firstName, String sessionId, boolean agreedToTerms);
+    ClientData getClientData();
 
-    List<Client> getClientData(String sessionId);
+    void createClient(ClientInputData clientInputData);
 
-    void updateClient(List<Integer> inputSectors, String firstName, String sessionId, boolean agreedToTerms);
+    void updateClient(ClientInputData clientInputData);
 }

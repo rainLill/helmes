@@ -1,15 +1,11 @@
 package com.trial.to.helmes.api;
 
-import com.trial.to.helmes.entity.Client;
+import com.trial.to.helmes.model.ClientData;
+import com.trial.to.helmes.model.ClientInputData;
 import com.trial.to.helmes.service.ClientService;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.RequestContextHolder;
 
-import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.util.List;
-
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("client")
@@ -22,29 +18,17 @@ public class ClientController {
     }
 
     @GetMapping()
-    public List<Client> getClientData() {
-        String sessionId = RequestContextHolder.currentRequestAttributes().getSessionId();
-        return clientService.getClientData(sessionId);
+    public ClientData getClientData() {
+        return clientService.getClientData();
     }
 
     @PostMapping()
-    public void addClient(
-            @NotEmpty @RequestBody List<Integer> inputSectors,
-            @NotEmpty @RequestParam("firstName") String firstName,
-            @NotNull @AssertTrue @RequestParam("terms") Boolean terms) {
-
-        String sessionId = RequestContextHolder.currentRequestAttributes().getSessionId();
-        clientService.createClient(inputSectors, firstName, sessionId, terms);
+    public void createClient(@Valid @RequestBody ClientInputData clientInputData) {
+        clientService.createClient(clientInputData);
     }
 
     @PutMapping()
-    public void updateClientData(
-            @NotEmpty @RequestBody List<Integer> inputSectors,
-            @NotEmpty @RequestParam("firstName") String firstName,
-            @NotNull @AssertTrue @RequestParam("terms") Boolean terms) {
-
-        String sessionId = RequestContextHolder.currentRequestAttributes().getSessionId();
-        clientService.updateClient(inputSectors, firstName, sessionId, terms);
+    public void updateClientData(@Valid @RequestBody ClientInputData clientInputData) {
+        clientService.updateClient(clientInputData);
     }
-
 }

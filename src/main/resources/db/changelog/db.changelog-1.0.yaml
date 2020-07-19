@@ -4,12 +4,6 @@ databaseChangeLog:
       username:  rain
 
   - changeSet:
-      id:  200713 Liquibase setup
-      author:  rain
-      changes:
-
-
-  - changeSet:
       id: 200713 creation of tables
       author: rain
       changes:
@@ -18,7 +12,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: int
+                  type: BIGINT
                   autoIncrement: true
                   constraints:
                     primaryKey: true
@@ -28,7 +22,7 @@ databaseChangeLog:
                   type: text
               - column:
                   name: parent_id
-                  type: int
+                  type: BIGINT
                   constraints:
                     foreignKeyName: fk_sector_parent
                     references: sector(id)
@@ -38,7 +32,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: int
+                  type: BIGINT
                   autoIncrement: true
                   constraints:
                     primaryKey: true
@@ -47,18 +41,32 @@ databaseChangeLog:
                   name: name
                   type: text
               - column:
-                  name: session_id
-                  type: text
+                  name: terms
+                  type: BOOLEAN
+
+
+        - createTable:
+            tableName: client_sector
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
               - column:
                   name: sector_id
-                  type: int
+                  type: BIGINT
                   constraints:
                     foreignKeyName: fk_sector_id
                     references: sector(id)
               - column:
-                  name: terms
-                  type: BOOLEAN
-
+                  name: client_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_client_id
+                    references: client(id)
 
   - changeSet:
       id: 200713 sectors insertion

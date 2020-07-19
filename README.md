@@ -11,10 +11,11 @@ Helmes
 ---
 Notes
 
-    - index.html is included in Spring project and located
+    - Front end is added to Spring server project and located
     resources/public/index.html. 
-    All other front-end resources are included same folder.
+    - Front end is on React and Material-UI.
     - Front and back end both have input data validation (all
-    fields mandatory). 
+    fields mandatory).
+    
     
     - Full database dump is in folder /DBdump
